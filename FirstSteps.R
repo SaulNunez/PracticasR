@@ -39,11 +39,20 @@ sex_factor <- factor(betta_store_sex)
 #Expand M and F to a more visible value
 levels(sex_factor) <- c("Female", "Male")
 
-#Factores ordenados
+head(mtcars)
+#Matrix operations using mtcars a builtin dataset
+# Show first row (Mazda RX4)
+print(mtcars[1,])
+# Get MPG & obtain average MPG
+print(mtcars[,1])
+mean(mtcars[,1])
+
+#Ordered factors
 car_sizes <- c("Pickup","Minivan","Sedan","Hatchback","Minivan","Pickup","Subcompact","SUV","Kei")
-car_size_factor <- factor(car_sizes, ordered=TRUE, levels = c("Kei","Subcompact","Sedan","Hatchback","Pickup","SUV","Minivan"))
+car_size_factor <- factor(car_sizes, ordered=TRUE, levels = c("Kei","Subcompact","Sedan","Hatchback","SUV","Minivan","Pickup"))
 car_2 <- car_size_factor[2]
 car_1 <- car_size_factor[1]
 #Compare cars with their factor
 #A pickup should be bigger than a minivan
 car_1 > car_2
+
